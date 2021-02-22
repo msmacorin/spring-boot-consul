@@ -1,11 +1,13 @@
 server:
-  port: 8090
+  port: ${SERVER_PORT:9000}
 spring:
   application:
-    name: customers-service
+    name: sales-service
   cloud:
     consul:
       discovery:
         instance-id: ${spring.application.name}:${random.value}
+      config:
+        format: YAML
       host: localhost
       port: 8500
